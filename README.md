@@ -21,3 +21,16 @@ Additional credit for using useful abstractions that add to the codebase. This i
 - (iii) and more
 
 Please share your work using a GitHub repository with @proftom and @Gnoyoyo.
+
+# Setup instruction
+
+## Prerequisite
+
+- pnpm 8
+- Node.js 20 LTS
+
+## Setup
+
+- `pnpm install`
+- `pnpm start` - run app
+- `pnpm dev` - run app in dev mode with watching
