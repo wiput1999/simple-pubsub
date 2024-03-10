@@ -19,10 +19,6 @@ export class MachineRefillSubscriber implements ISubscriber {
       return
     }
 
-    console.log(
-      `[Subscriber - ${eventType}] Refilling Machine id: ${machineId} with quantity ${refillQuantity}`
-    )
-
     const newStockLevel = machine.stockLevel + refillQuantity
 
     machine.stockLevel = newStockLevel

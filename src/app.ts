@@ -5,6 +5,7 @@ import {
   MachineSaleSubscriber,
   MachineRefillSubscriber,
   LowStockWarningSubscriber,
+  StockLevelOkSubscriber,
 } from 'subscribers'
 
 // program
@@ -13,6 +14,7 @@ import {
   const saleSubscriber = new MachineSaleSubscriber()
   const refillSubscriber = new MachineRefillSubscriber()
   const lowStockWarningSubscriber = new LowStockWarningSubscriber()
+  const stockLevelOkSubscriber = new StockLevelOkSubscriber()
 
   // create the PubSub service
   publishSubscribeService.subscribe(EventType.MachineSale, saleSubscriber)
@@ -21,9 +23,13 @@ import {
     EventType.LowStockWarning,
     lowStockWarningSubscriber
   )
+  publishSubscribeService.subscribe(
+    EventType.StockLevelOk,
+    stockLevelOkSubscriber
+  )
 
   // create 5 random events
-  const events = [...Array(5)].map((i) => eventGenerator())
+  const events = [...Array(10)].map((i) => eventGenerator())
 
   // publish the events
   for (const event of events) {
